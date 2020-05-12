@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="a879efa7-5f2b-414f-a767-f15e96110868" name="Default Changelist" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="ProjectId" id="1bcxxqNvVlLqpz6xXdmTcDH0OGf" />
+  <component name="ProjectViewState">
+    <option name="autoscrollToSource" value="true" />
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
+    <property name="nodejs_npm_path_reset_for_default_project" value="true" />
+    <property name="project.structure.last.edited" value="Libraries" />
+    <property name="project.structure.proportion" value="0.0" />
+    <property name="project.structure.side.proportion" value="0.2" />
+  </component>
+  <component name="RunManager">
+    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Main" />
+      <module name="CSVParser" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.Main" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="ServiceViewManager">
+    <option name="viewStates">
+      <list>
+        <serviceView>
+          <treeState>
+            <expand />
+            <select />
+          </treeState>
+        </serviceView>
+      </list>
+    </option>
+  </component>
+  <component name="StructureViewFactory">
+    <option name="ACTIVE_ACTIONS" value=",SHOW_LAMBDA" />
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="a879efa7-5f2b-414f-a767-f15e96110868" name="Default Changelist" comment="" />
+      <created>1588945432062</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1588945432062</updated>
+      <workItem from="1588945433651" duration="3742000" />
+      <workItem from="1588960557830" duration="8221000" />
+      <workItem from="1588978172212" duration="252000" />
+      <workItem from="1588979791538" duration="3856000" />
+      <workItem from="1589035120587" duration="5000" />
+      <workItem from="1589309644081" duration="574000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="2173" y="280" key="#com.intellij.ide.util.MemberChooser" timestamp="1588974883721">
+      <screen x="1680" y="173" width="1360" height="768" />
+    </state>
+    <state x="2173" y="280" key="#com.intellij.ide.util.MemberChooser/1680.173.1360.768/0.0.1680.1050@1680.173.1360.768" timestamp="1588974883721" />
+    <state x="2098" y="340" key="#com.intellij.ide.util.PackageChooserDialog" timestamp="1588946247349">
+      <screen x="1680" y="173" width="1360" height="768" />
+    </state>
+    <state x="2098" y="340" key="#com.intellij.ide.util.PackageChooserDialog/1680.173.1360.768/0.0.1680.1050@1680.173.1360.768" timestamp="1588946247349" />
+    <state x="2148" y="449" width="423" height="225" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes" timestamp="1588961120279">
+      <screen x="1680" y="173" width="1360" height="768" />
+    </state>
+    <state x="2148" y="449" width="423" height="225" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes/1680.173.1360.768/0.0.1680.1050@1680.173.1360.768" timestamp="1588961120279" />
+    <state width="1318" height="202" key="GridCell.Tab.0.bottom" timestamp="1588985408730">
+      <screen x="1680" y="173" width="1360" height="768" />
+    </state>
+    <state width="1318" height="202" key="GridCell.Tab.0.bottom/1680.173.1360.768/0.0.1680.1050@1680.173.1360.768" timestamp="1588985408730" />
+    <state width="1318" height="202" key="GridCell.Tab.0.center" timestamp="1588985408730">
+      <screen x="1680" y="173" width="1360" height="768" />
+    </state>
+    <state width="1318" height="202" key="GridCell.Tab.0.center/1680.173.1360.768/0.0.1680.1050@1680.173.1360.768" timestamp="1588985408730" />
+    <state width="1318" height="202" key="GridCell.Tab.0.left" timestamp="1588985408729">
+      <screen x="1680" y="173" width="1360" height="768" />
+    </state>
+    <state width="1318" height="202" key="GridCell.Tab.0.left/1680.173.1360.768/0.0.1680.1050@1680.173.1360.768" timestamp="1588985408729" />
+    <state width="1318" height="202" key="GridCell.Tab.0.right" timestamp="1588985408730">
+      <screen x="1680" y="173" width="1360" height="768" />
+    </state>
+    <state width="1318" height="202" key="GridCell.Tab.0.right/1680.173.1360.768/0.0.1680.1050@1680.173.1360.768" timestamp="1588985408730" />
+    <state width="1318" height="250" key="GridCell.Tab.1.bottom" timestamp="1588976753384">
+      <screen x="1680" y="173" width="1360" height="768" />
+    </state>
+    <state width="1318" height="250" key="GridCell.Tab.1.bottom/1680.173.1360.768/0.0.1680.1050@1680.173.1360.768" timestamp="1588976753384" />
+    <state width="1318" height="250" key="GridCell.Tab.1.center" timestamp="1588976753383">
+      <screen x="1680" y="173" width="1360" height="768" />
+    </state>
+    <state width="1318" height="250" key="GridCell.Tab.1.center/1680.173.1360.768/0.0.1680.1050@1680.173.1360.768" timestamp="1588976753383" />
+    <state width="1318" height="250" key="GridCell.Tab.1.left" timestamp="1588976753382">
+      <screen x="1680" y="173" width="1360" height="768" />
+    </state>
+    <state width="1318" height="250" key="GridCell.Tab.1.left/1680.173.1360.768/0.0.1680.1050@1680.173.1360.768" timestamp="1588976753382" />
+    <state width="1318" height="250" key="GridCell.Tab.1.right" timestamp="1588976753384">
+      <screen x="1680" y="173" width="1360" height="768" />
+    </state>
+    <state width="1318" height="250" key="GridCell.Tab.1.right/1680.173.1360.768/0.0.1680.1050@1680.173.1360.768" timestamp="1588976753384" />
+    <state x="1680" y="196" width="1024" height="701" key="SettingsEditor" timestamp="1588980891143">
+      <screen x="1680" y="173" width="1360" height="768" />
+    </state>
+    <state x="1680" y="196" width="1024" height="701" key="SettingsEditor/1680.173.1360.768/0.0.1680.1050@1680.173.1360.768" timestamp="1588980891143" />
+    <state width="500" height="445" key="SwitcherDM" timestamp="1588947396080">
+      <screen x="1680" y="173" width="1360" height="768" />
+    </state>
+    <state width="500" height="445" key="SwitcherDM/1680.173.1360.768/0.0.1680.1050@1680.173.1360.768" timestamp="1588947396080" />
+    <state x="2025" y="265" width="670" height="676" key="search.everywhere.popup" timestamp="1588946633009">
+      <screen x="1680" y="173" width="1360" height="768" />
+    </state>
+    <state x="2025" y="265" width="670" height="676" key="search.everywhere.popup/1680.173.1360.768/0.0.1680.1050@1680.173.1360.768" timestamp="1588946633009" />
+  </component>
+</project>
