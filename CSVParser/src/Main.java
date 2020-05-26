@@ -11,12 +11,12 @@ public class Main {
         Sistema sistema = new Sistema();
 
 
-        Workbook workbook = Workbook.getWorkbook(new File("/Users/lazaropinheiro/Downloads/lista_adjacencias_paragens.xls"));
+        Workbook workbook = Workbook.getWorkbook(new File("/Users/lazaropinheiro/SRCR-Componente_Individual/Ficheiros Fornecidos/lista_adjacencias_paragens.xls"));
         int Num = workbook.getNumberOfSheets();
         StringBuilder sb;
 
         for (int i = 0; i < Num; i++) {
-            Sheet sheet = workbook.getSheet(i);
+            workbook.getSheet(i);
             Sheet s = workbook.getSheet(i);
 
             int linha = s.getRows();
@@ -34,6 +34,8 @@ public class Main {
             }
         }
 
-        System.out.println(sistema.toString());
+        FileWriter myWriter = new FileWriter("/Users/lazaropinheiro/SRCR-Componente_Individual/factos.pl");
+        myWriter.write(sistema.toString());
+        myWriter.close();
     }
 }

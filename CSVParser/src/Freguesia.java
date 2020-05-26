@@ -1,4 +1,3 @@
-
 public class Freguesia {
     private int id;
     private String nome;
@@ -10,12 +9,9 @@ public class Freguesia {
         this.nome = nome;
     }
 
-
     public int getId() {
         return id;
     }
-
-
 
     @Override
     public String toString() {

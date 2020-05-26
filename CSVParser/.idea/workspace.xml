@@ -1,7 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="a879efa7-5f2b-414f-a767-f15e96110868" name="Default Changelist" comment="" />
+    <list default="true" id="a879efa7-5f2b-414f-a767-f15e96110868" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CSVParser/Carreira.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CSVParser/Carreira.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CSVParser/META-INF/CSVParser.kotlin_module" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CSVParser/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CSVParser/Main.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CSVParser/Paragem.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CSVParser/Paragem.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CSVParser/Ponto.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CSVParser/Ponto.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CSVParser/Sistema.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CSVParser/Sistema.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Carreira.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Carreira.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Freguesia.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Freguesia.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Operadora.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Operadora.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Paragem.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Paragem.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Ponto.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Ponto.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Sistema.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Sistema.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Ficheiros Fornecidos/lista_adjacencias_paragens.xls" beforeDir="false" afterPath="$PROJECT_DIR$/../Ficheiros Fornecidos/lista_adjacencias_paragens.xls" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -14,7 +32,11 @@
       </list>
     </option>
   </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
   <component name="ProjectId" id="1bcxxqNvVlLqpz6xXdmTcDH0OGf" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="autoscrollToSource" value="true" />
     <option name="hideEmptyMiddlePackages" value="true" />
@@ -23,8 +45,10 @@
   </component>
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="project.structure.last.edited" value="Libraries" />
@@ -76,6 +100,8 @@
       <workItem from="1588979791538" duration="3856000" />
       <workItem from="1589035120587" duration="5000" />
       <workItem from="1589309644081" duration="574000" />
+      <workItem from="1590504423732" duration="6723000" />
+      <workItem from="1590530922260" duration="2095000" />
     </task>
     <servers />
   </component>
@@ -83,9 +109,10 @@
     <option name="version" value="1" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="2173" y="280" key="#com.intellij.ide.util.MemberChooser" timestamp="1588974883721">
-      <screen x="1680" y="173" width="1360" height="768" />
+    <state x="2173" y="253" key="#com.intellij.ide.util.MemberChooser" timestamp="1590510004101">
+      <screen x="1680" y="146" width="1360" height="768" />
     </state>
+    <state x="2173" y="253" key="#com.intellij.ide.util.MemberChooser/1680.146.1360.768/0.0.1680.1050@1680.146.1360.768" timestamp="1590510004101" />
     <state x="2173" y="280" key="#com.intellij.ide.util.MemberChooser/1680.173.1360.768/0.0.1680.1050@1680.173.1360.768" timestamp="1588974883721" />
     <state x="2098" y="340" key="#com.intellij.ide.util.PackageChooserDialog" timestamp="1588946247349">
       <screen x="1680" y="173" width="1360" height="768" />
@@ -95,21 +122,25 @@
       <screen x="1680" y="173" width="1360" height="768" />
     </state>
     <state x="2148" y="449" width="423" height="225" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes/1680.173.1360.768/0.0.1680.1050@1680.173.1360.768" timestamp="1588961120279" />
-    <state width="1318" height="202" key="GridCell.Tab.0.bottom" timestamp="1588985408730">
-      <screen x="1680" y="173" width="1360" height="768" />
+    <state width="1318" height="201" key="GridCell.Tab.0.bottom" timestamp="1590535308730">
+      <screen x="1680" y="146" width="1360" height="768" />
     </state>
+    <state width="1318" height="201" key="GridCell.Tab.0.bottom/1680.146.1360.768/0.0.1680.1050@1680.146.1360.768" timestamp="1590535308730" />
     <state width="1318" height="202" key="GridCell.Tab.0.bottom/1680.173.1360.768/0.0.1680.1050@1680.173.1360.768" timestamp="1588985408730" />
-    <state width="1318" height="202" key="GridCell.Tab.0.center" timestamp="1588985408730">
-      <screen x="1680" y="173" width="1360" height="768" />
+    <state width="1318" height="201" key="GridCell.Tab.0.center" timestamp="1590535308728">
+      <screen x="1680" y="146" width="1360" height="768" />
     </state>
+    <state width="1318" height="201" key="GridCell.Tab.0.center/1680.146.1360.768/0.0.1680.1050@1680.146.1360.768" timestamp="1590535308728" />
     <state width="1318" height="202" key="GridCell.Tab.0.center/1680.173.1360.768/0.0.1680.1050@1680.173.1360.768" timestamp="1588985408730" />
-    <state width="1318" height="202" key="GridCell.Tab.0.left" timestamp="1588985408729">
-      <screen x="1680" y="173" width="1360" height="768" />
+    <state width="1318" height="201" key="GridCell.Tab.0.left" timestamp="1590535308728">
+      <screen x="1680" y="146" width="1360" height="768" />
     </state>
+    <state width="1318" height="201" key="GridCell.Tab.0.left/1680.146.1360.768/0.0.1680.1050@1680.146.1360.768" timestamp="1590535308728" />
     <state width="1318" height="202" key="GridCell.Tab.0.left/1680.173.1360.768/0.0.1680.1050@1680.173.1360.768" timestamp="1588985408729" />
-    <state width="1318" height="202" key="GridCell.Tab.0.right" timestamp="1588985408730">
-      <screen x="1680" y="173" width="1360" height="768" />
+    <state width="1318" height="201" key="GridCell.Tab.0.right" timestamp="1590535308729">
+      <screen x="1680" y="146" width="1360" height="768" />
     </state>
+    <state width="1318" height="201" key="GridCell.Tab.0.right/1680.146.1360.768/0.0.1680.1050@1680.146.1360.768" timestamp="1590535308729" />
     <state width="1318" height="202" key="GridCell.Tab.0.right/1680.173.1360.768/0.0.1680.1050@1680.173.1360.768" timestamp="1588985408730" />
     <state width="1318" height="250" key="GridCell.Tab.1.bottom" timestamp="1588976753384">
       <screen x="1680" y="173" width="1360" height="768" />

@@ -1,4 +1,3 @@
-
 public class Operadora {
     private int id;
     private String nome;

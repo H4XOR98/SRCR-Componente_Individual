@@ -1,6 +1,3 @@
-import java.util.ArrayList;
-import java.util.List;
-
 public class Paragem {
     private int gid;
     private Ponto localizacao;
@@ -20,14 +17,14 @@ public class Paragem {
         this.rua = rua;
     }
 
+    public Ponto getLocalizacao() {
+        return localizacao;
+    }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("paragem( " + this.gid + ", " + this.localizacao.toString() + ", '" + this.estado +  "', '" + this.tipo + "', '" + this.publicidade +"', " + this.operadora.getId());
-
-        sb.append(this.rua.getCodigo() + " ).\n");
-
+        sb.append("paragem( " + this.gid + ", " + this.localizacao.toString() + ", '" + this.estado +  "', '" + this.tipo + "', '" + this.publicidade +"', " + this.operadora.getId() + ", " + this.rua.getCodigo() + " ).\n");
         return  sb.toString();
     }
 }
