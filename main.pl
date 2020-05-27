@@ -10,4 +10,7 @@
 
 % - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
+:- dynamic adjudicante/4.
+:- dynamic adjudicataria/4.
 :- include(auxiliares).
+:- include(factos).

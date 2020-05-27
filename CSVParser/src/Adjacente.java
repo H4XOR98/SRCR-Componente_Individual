@@ -1,4 +1,6 @@
 import java.text.DecimalFormat;
+import java.text.DecimalFormatSymbols;
+import java.util.Locale;
 
 public class Adjacente {
     private int idCarreira;
@@ -15,9 +17,17 @@ public class Adjacente {
 
     @Override
     public String toString() {
-        DecimalFormat numberFormat = new DecimalFormat("#.00");
+        String r;
+        if((this.distancia == Math.floor(this.distancia)) && !Double.isInfinite(this.distancia)) {
+            r = "" + this.distancia;
+        }else{
+            DecimalFormatSymbols otherSymbols = new DecimalFormatSymbols(Locale.getDefault());
+            otherSymbols.setDecimalSeparator('.');
+            DecimalFormat numberFormat = new DecimalFormat("#.0000000000");
+            r = numberFormat.format(this.distancia);
+        }
         StringBuilder sb = new StringBuilder();
-        sb.append("adjacente( " + this.idCarreira + ", " + this.gidOrigem + ", " + this.gidDestino + ", " + numberFormat.format(this.distancia ) + " ).");
+        sb.append("adjacente( " + this.idCarreira + ", " + this.gidOrigem + ", " + this.gidDestino + ", " + r + " ).");
         return sb.toString();
     }
 }

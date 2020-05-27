@@ -1,3 +1,4 @@
+import java.text.Normalizer;
 import java.util.*;
 
 public class Sistema {
@@ -20,17 +21,17 @@ public class Sistema {
     }
 
     public void inserirParagem(int gid, double latitude, double longitude, String estado, String tipo, String publicidade, String operadora, int carreira, int codigo, String rua, String freguesia){
-        if(!this.freguesias.containsKey(freguesia)){
-            this.freguesias.put(freguesia, new Freguesia(freguesia));
+        if(!this.freguesias.containsKey(stripAccents(freguesia))){
+            this.freguesias.put(stripAccents(freguesia), new Freguesia(stripAccents(freguesia)));
         }
         if(!this.ruas.containsKey(codigo)){
-            this.ruas.put(codigo,new Rua(codigo,rua,this.freguesias.get(freguesia)));
+            this.ruas.put(codigo,new Rua(codigo,stripAccents(rua),this.freguesias.get(stripAccents(freguesia))));
         }
-        if(!this.operadoras.containsKey(operadora)){
-            this.operadoras.put(operadora,new Operadora(operadora));
+        if(!this.operadoras.containsKey(stripAccents(operadora))){
+            this.operadoras.put(stripAccents(operadora),new Operadora(stripAccents(operadora)));
         }
         if(!this.paragens.containsKey(gid)){
-           this.paragens.put(gid,new Paragem(gid,latitude,longitude,estado,tipo,publicidade,this.operadoras.get(operadora),this.ruas.get(codigo)));
+           this.paragens.put(gid,new Paragem(gid,latitude,longitude,stripAccents(estado),stripAccents(tipo),stripAccents(publicidade),this.operadoras.get(stripAccents(operadora)),this.ruas.get(codigo)));
         }
 
         if(!this.carreiras.containsKey(carreira)) {
@@ -61,30 +62,37 @@ public class Sistema {
         for(Freguesia freguesia : this.freguesias.values()){
             sb.append(freguesia.toString());
         }
-        sb.append("\n\n\n+" +
+        sb.append("\n\n\n" +
                 "% RUAS\n" +
                 "% Extensão do predicado rua: Codigo, Nome, IdFreguesia -> {V,F}\n\n");
         for(Rua rua : this.ruas.values()){
             sb.append(rua.toString());
         }
-        sb.append("\n\n\n+" +
+        sb.append("\n\n\n" +
                 "% OPERADORAS\n" +
                 "% Extensão do predicado operadora: IdOperadora, Nome -> {V,F}\n\n");
         for(Operadora operadora : this.operadoras.values()){
             sb.append(operadora.toString());
         }
-        sb.append("\n\n\n+" +
+        sb.append("\n\n\n" +
                 "% PARAGENS\n" +
                 "% Extensão do predicado paragem: Gid, Latitude, Longitude, Estado, Tipo, Publicidade, IdOperadora, Codigo -> {V,F}\n\n");
         for(Paragem paragem : this.paragens.values()){
             sb.append(paragem.toString());
         }
-        sb.append("\n\n\n+" +
+        sb.append("\n\n\n" +
                 "% ADJACENTES\n" +
                 "% Extensão do predicado adjacente: Carreira, GidOrigem, GidDestino, Distancia -> {V,F}\n\n");
         for(Carreira carreira : this.carreiras.values()){
             sb.append(carreira.toString());
         }
         return sb.toString();
+    }
+
+    private String stripAccents(String s)
+    {
+        String result = Normalizer.normalize(s, Normalizer.Form.NFD);
+        result = result.replaceAll("[\\p{InCombiningDiacriticalMarks}]", "");
+        return result;
     }
 }
