@@ -87,6 +87,14 @@ public class Sistema {
         for(Carreira carreira : this.carreiras.values()){
             sb.append(carreira.toString());
         }
+
+        sb.append("\n\n\n" +
+                "% HORARIOS\n" +
+                "% Extensão do predicado horario: Carreira, DiaSemana, Hora, Minuto -> {V,F}\n\n");
+        for(Carreira carreira : this.carreiras.values()){
+            sb.append(carreira.getHorario() + "\n");
+        }
+
         return sb.toString();
     }
 
