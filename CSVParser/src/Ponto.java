@@ -1,7 +1,3 @@
-import java.text.DecimalFormat;
-import java.text.DecimalFormatSymbols;
-import java.util.Locale;
-
 public class Ponto {
     private double latitude;
     private double longitude;

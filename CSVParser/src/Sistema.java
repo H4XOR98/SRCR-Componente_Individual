@@ -31,8 +31,9 @@ public class Sistema {
             this.operadoras.put(stripAccents(operadora),new Operadora(stripAccents(operadora)));
         }
         if(!this.paragens.containsKey(gid)){
-           this.paragens.put(gid,new Paragem(gid,latitude,longitude,stripAccents(estado),stripAccents(tipo),stripAccents(publicidade),this.operadoras.get(stripAccents(operadora)),this.ruas.get(codigo)));
+           this.paragens.put(gid,new Paragem(gid,latitude,longitude,stripAccents(estado),stripAccents(tipo),stripAccents(publicidade), this.operadoras.get(stripAccents(operadora)),this.ruas.get(codigo)));
         }
+        this.paragens.get(gid).addCarreira(carreira);
 
         if(!this.carreiras.containsKey(carreira)) {
             this.carreiras.put(carreira, new Carreira(carreira));
@@ -70,13 +71,13 @@ public class Sistema {
         }
         sb.append("\n\n\n" +
                 "% OPERADORAS\n" +
-                "% Extensão do predicado operadora: IdOperadora, Nome -> {V,F}\n\n");
+                "% Extensão do predicado operadora: Operadora, Nome -> {V,F}\n\n");
         for(Operadora operadora : this.operadoras.values()){
             sb.append(operadora.toString());
         }
         sb.append("\n\n\n" +
                 "% PARAGENS\n" +
-                "% Extensão do predicado paragem: Gid, Latitude, Longitude, Estado, Tipo, Publicidade, IdOperadora, Codigo -> {V,F}\n\n");
+                "% Extensão do predicado paragem: Gid, Latitude, Longitude, Estado, Tipo, Publicidade, Carreiras, Operadora, Codigo -> {V,F}\n\n");
         for(Paragem paragem : this.paragens.values()){
             sb.append(paragem.toString());
         }
@@ -93,6 +94,6 @@ public class Sistema {
     {
         String result = Normalizer.normalize(s, Normalizer.Form.NFD);
         result = result.replaceAll("[\\p{InCombiningDiacriticalMarks}]", "");
-        return result;
+        return result.replaceAll("´","");
     }
 }

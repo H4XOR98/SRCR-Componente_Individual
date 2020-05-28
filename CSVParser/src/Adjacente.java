@@ -17,17 +17,8 @@ public class Adjacente {
 
     @Override
     public String toString() {
-        String r;
-        if((this.distancia == Math.floor(this.distancia)) && !Double.isInfinite(this.distancia)) {
-            r = "" + this.distancia;
-        }else{
-            DecimalFormatSymbols otherSymbols = new DecimalFormatSymbols(Locale.getDefault());
-            otherSymbols.setDecimalSeparator('.');
-            DecimalFormat numberFormat = new DecimalFormat("#.0000000000");
-            r = numberFormat.format(this.distancia);
-        }
         StringBuilder sb = new StringBuilder();
-        sb.append("adjacente( " + this.idCarreira + ", " + this.gidOrigem + ", " + this.gidDestino + ", " + r + " ).");
+        sb.append("adjacente( " + this.idCarreira + ", " + this.gidOrigem + ", " + this.gidDestino + ", " + String.valueOf(this.distancia).replaceAll(",",".") + " ).");
         return sb.toString();
     }
 }
