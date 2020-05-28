@@ -2593,208 +2593,247 @@ adjacente( 776, 897, 681, 590.7638141423355 ).
 % HORARIOS
 % Extensão do predicado horario: Carreira, DiaSemana, Hora, Minuto -> {V,F}
 
-horario( 1, Quarta, 17, 30 ).
-horario( 1, Quarta, 8, 0 ).
-horario( 1, Quinta, 22, 45 ).
-horario( 1, Quinta, 8, 30 ).
-horario( 1, Terca, 15, 45 ).
-horario( 1, Terca, 21, 0 ).
+horario( 1, Sabado, 6, 15 ).
+horario( 1, Sabado, 8, 45 ).
+horario( 1, Segunda, 6, 30 ).
+horario( 1, Segunda, 8, 15 ).
+horario( 1, Segunda, 9, 45 ).
 
-horario( 2, Quinta, 16, 0 ).
-horario( 2, Segunda, 21, 0 ).
+horario( 2, Quinta, 12, 45 ).
+horario( 2, Quinta, 14, 0 ).
+horario( 2, Quinta, 20, 15 ).
+horario( 2, Sabado, 12, 30 ).
+horario( 2, Sabado, 13, 0 ).
+horario( 2, Sabado, 16, 0 ).
 
-horario( 6, Domingo, 6, 0 ).
-horario( 6, Quarta, 10, 45 ).
-horario( 6, Segunda, 13, 15 ).
+horario( 6, Domingo, 12, 15 ).
+horario( 6, Domingo, 14, 0 ).
+horario( 6, Domingo, 14, 15 ).
+horario( 6, Quarta, 18, 30 ).
+horario( 6, Quarta, 19, 15 ).
+horario( 6, Quarta, 20, 15 ).
+horario( 6, Terca, 12, 30 ).
+horario( 6, Terca, 20, 30 ).
+horario( 6, Terca, 22, 45 ).
 
-horario( 7, Quinta, 10, 45 ).
-horario( 7, Quinta, 18, 15 ).
-horario( 7, Sabado, 14, 15 ).
-horario( 7, Sabado, 16, 15 ).
-horario( 7, Sexta, 21, 15 ).
-horario( 7, Sexta, 7, 45 ).
+horario( 7, Domingo, 9, 45 ).
+horario( 7, Sabado, 22, 0 ).
 
-horario( 10, Sabado, 12, 15 ).
-horario( 10, Sabado, 13, 0 ).
-horario( 10, Sabado, 20, 30 ).
-horario( 10, Sabado, 6, 30 ).
-horario( 10, Segunda, 13, 15 ).
-horario( 10, Segunda, 17, 45 ).
-horario( 10, Sexta, 10, 45 ).
-horario( 10, Sexta, 16, 30 ).
+horario( 10, Domingo, 13, 30 ).
+horario( 10, Quinta, 11, 30 ).
+horario( 10, Sexta, 8, 0 ).
+horario( 10, Terca, 13, 15 ).
 
-horario( 11, Quarta, 12, 45 ).
-horario( 11, Quarta, 7, 15 ).
-horario( 11, Sabado, 15, 45 ).
-horario( 11, Sabado, 21, 45 ).
+horario( 11, Quarta, 18, 15 ).
+horario( 11, Sabado, 19, 30 ).
+horario( 11, Sexta, 8, 0 ).
 
-horario( 12, Domingo, 10, 45 ).
-horario( 12, Domingo, 20, 15 ).
-horario( 12, Sabado, 21, 15 ).
-horario( 12, Sabado, 21, 45 ).
+horario( 12, Domingo, 17, 30 ).
+horario( 12, Quarta, 11, 0 ).
+horario( 12, Sexta, 22, 45 ).
 
-horario( 13, Domingo, 17, 45 ).
-horario( 13, Domingo, 22, 15 ).
-horario( 13, Quarta, 11, 0 ).
-horario( 13, Quarta, 16, 45 ).
-horario( 13, Sabado, 18, 15 ).
-horario( 13, Sabado, 6, 0 ).
-horario( 13, Terca, 12, 15 ).
-horario( 13, Terca, 6, 0 ).
+horario( 13, Domingo, 20, 15 ).
+horario( 13, Domingo, 21, 45 ).
+horario( 13, Domingo, 7, 30 ).
+horario( 13, Domingo, 8, 30 ).
 
-horario( 15, Segunda, 22, 0 ).
-horario( 15, Terca, 12, 30 ).
-horario( 15, Terca, 15, 15 ).
+horario( 15, Domingo, 12, 30 ).
+horario( 15, Domingo, 20, 30 ).
+horario( 15, Terca, 16, 30 ).
+horario( 15, Terca, 7, 30 ).
 
-horario( 23, Terca, 22, 30 ).
-horario( 23, Terca, 6, 0 ).
-horario( 23, Terca, 6, 45 ).
+horario( 23, Segunda, 11, 15 ).
+horario( 23, Segunda, 15, 45 ).
+horario( 23, Segunda, 21, 30 ).
+horario( 23, Sexta, 13, 30 ).
+horario( 23, Sexta, 16, 15 ).
+horario( 23, Sexta, 7, 45 ).
 
-horario( 101, Sexta, 12, 15 ).
-horario( 101, Sexta, 16, 15 ).
-horario( 101, Sexta, 16, 30 ).
-horario( 101, Sexta, 17, 30 ).
+horario( 101, Quinta, 16, 30 ).
+horario( 101, Quinta, 19, 15 ).
+horario( 101, Quinta, 19, 45 ).
 
-horario( 102, Quarta, 15, 0 ).
-horario( 102, Quarta, 22, 45 ).
-horario( 102, Quarta, 9, 15 ).
-horario( 102, Quinta, 15, 0 ).
-horario( 102, Quinta, 16, 30 ).
-horario( 102, Quinta, 21, 45 ).
-horario( 102, Segunda, 10, 0 ).
-horario( 102, Segunda, 14, 30 ).
-horario( 102, Segunda, 19, 0 ).
-horario( 102, Segunda, 21, 0 ).
-horario( 102, Segunda, 6, 0 ).
+horario( 102, Quarta, 15, 30 ).
+horario( 102, Quarta, 20, 15 ).
+horario( 102, Sexta, 11, 45 ).
+horario( 102, Sexta, 18, 45 ).
 
-horario( 106, Terca, 16, 15 ).
-horario( 106, Terca, 20, 15 ).
+horario( 106, Quarta, 17, 15 ).
+horario( 106, Quarta, 19, 45 ).
+horario( 106, Quarta, 22, 15 ).
+horario( 106, Sexta, 16, 45 ).
+horario( 106, Sexta, 18, 45 ).
+horario( 106, Sexta, 6, 30 ).
 
-horario( 108, Domingo, 11, 30 ).
-horario( 108, Domingo, 16, 15 ).
+horario( 108, Sabado, 11, 30 ).
+horario( 108, Sabado, 12, 0 ).
+horario( 108, Sabado, 22, 15 ).
+horario( 108, Terca, 16, 0 ).
+horario( 108, Terca, 6, 45 ).
+horario( 108, Terca, 9, 30 ).
 
-horario( 111, Quarta, 7, 0 ).
-horario( 111, Quinta, 17, 0 ).
-horario( 111, Sabado, 6, 0 ).
-horario( 111, Terca, 9, 30 ).
+horario( 111, Quarta, 18, 15 ).
+horario( 111, Sabado, 9, 15 ).
+horario( 111, Segunda, 18, 45 ).
+horario( 111, Terca, 8, 45 ).
 
-horario( 112, Quarta, 16, 30 ).
-horario( 112, Quarta, 8, 45 ).
-horario( 112, Quarta, 9, 30 ).
-horario( 112, Quinta, 11, 15 ).
-horario( 112, Quinta, 15, 30 ).
-horario( 112, Quinta, 22, 30 ).
-horario( 112, Terca, 19, 45 ).
-horario( 112, Terca, 21, 45 ).
-horario( 112, Terca, 8, 0 ).
+horario( 112, Sabado, 10, 15 ).
+horario( 112, Segunda, 17, 30 ).
+horario( 112, Sexta, 10, 15 ).
+horario( 112, Sexta, 14, 45 ).
 
-horario( 114, Domingo, 18, 15 ).
-horario( 114, Sabado, 13, 30 ).
-horario( 114, Segunda, 21, 15 ).
-horario( 114, Terca, 18, 0 ).
+horario( 114, Domingo, 11, 45 ).
+horario( 114, Domingo, 20, 15 ).
+horario( 114, Domingo, 22, 15 ).
+horario( 114, Sabado, 21, 30 ).
+horario( 114, Sabado, 8, 30 ).
 
-horario( 115, Quarta, 14, 45 ).
-horario( 115, Quarta, 20, 0 ).
-horario( 115, Quarta, 22, 15 ).
+horario( 115, Quarta, 13, 45 ).
+horario( 115, Quarta, 6, 30 ).
+horario( 115, Quinta, 12, 30 ).
+horario( 115, Quinta, 18, 30 ).
+horario( 115, Sexta, 17, 45 ).
+horario( 115, Sexta, 22, 0 ).
+horario( 115, Terca, 16, 45 ).
+horario( 115, Terca, 9, 45 ).
 
-horario( 116, Segunda, 20, 30 ).
+horario( 116, Quinta, 11, 15 ).
+horario( 116, Quinta, 14, 45 ).
+horario( 116, Terca, 15, 30 ).
+horario( 116, Terca, 18, 45 ).
 
-horario( 117, Domingo, 19, 30 ).
-horario( 117, Sexta, 19, 45 ).
-horario( 117, Terca, 12, 15 ).
+horario( 117, Quarta, 10, 45 ).
+horario( 117, Quinta, 17, 0 ).
+horario( 117, Sexta, 18, 0 ).
 
-horario( 119, Sabado, 11, 30 ).
-horario( 119, Sexta, 19, 15 ).
-horario( 119, Terca, 16, 15 ).
+horario( 119, Segunda, 17, 45 ).
+horario( 119, Segunda, 8, 15 ).
+horario( 119, Segunda, 8, 45 ).
+horario( 119, Sexta, 19, 0 ).
+horario( 119, Sexta, 7, 0 ).
+horario( 119, Sexta, 7, 45 ).
+horario( 119, Terca, 20, 45 ).
+horario( 119, Terca, 7, 30 ).
+horario( 119, Terca, 9, 15 ).
 
-horario( 122, Quinta, 10, 15 ).
-horario( 122, Quinta, 18, 30 ).
-horario( 122, Quinta, 6, 30 ).
+horario( 122, Domingo, 22, 15 ).
+horario( 122, Quarta, 7, 0 ).
+horario( 122, Quinta, 6, 45 ).
+horario( 122, Sexta, 15, 30 ).
 
-horario( 125, Quinta, 14, 0 ).
+horario( 125, Quarta, 10, 30 ).
+horario( 125, Segunda, 11, 0 ).
 
-horario( 129, Quarta, 19, 30 ).
-horario( 129, Sabado, 6, 45 ).
-horario( 129, Terca, 10, 30 ).
-horario( 129, Terca, 14, 0 ).
+horario( 129, Sabado, 11, 0 ).
+horario( 129, Sexta, 7, 0 ).
 
-horario( 158, Domingo, 10, 0 ).
-horario( 158, Domingo, 8, 30 ).
-horario( 158, Quarta, 14, 45 ).
-horario( 158, Quarta, 9, 0 ).
-horario( 158, Quinta, 20, 15 ).
-horario( 158, Quinta, 22, 0 ).
-horario( 158, Sabado, 11, 30 ).
-horario( 158, Sabado, 22, 30 ).
+horario( 158, Domingo, 13, 15 ).
+horario( 158, Domingo, 22, 15 ).
+horario( 158, Sabado, 15, 45 ).
+horario( 158, Sabado, 17, 30 ).
+horario( 158, Sabado, 18, 30 ).
+horario( 158, Sabado, 20, 15 ).
+horario( 158, Segunda, 10, 0 ).
+horario( 158, Segunda, 18, 30 ).
 
-horario( 162, Sabado, 12, 0 ).
-horario( 162, Segunda, 20, 15 ).
-horario( 162, Terca, 18, 15 ).
+horario( 162, Quinta, 7, 30 ).
+horario( 162, Quinta, 8, 0 ).
+horario( 162, Segunda, 17, 30 ).
+horario( 162, Segunda, 18, 0 ).
+horario( 162, Segunda, 20, 0 ).
+horario( 162, Segunda, 9, 45 ).
+horario( 162, Terca, 10, 0 ).
+horario( 162, Terca, 12, 0 ).
 
-horario( 171, Domingo, 11, 15 ).
-horario( 171, Domingo, 20, 45 ).
-horario( 171, Domingo, 6, 0 ).
+horario( 171, Domingo, 18, 0 ).
+horario( 171, Domingo, 22, 0 ).
+horario( 171, Domingo, 7, 45 ).
 
-horario( 184, Domingo, 13, 45 ).
+horario( 184, Domingo, 19, 0 ).
+horario( 184, Segunda, 15, 15 ).
+horario( 184, Sexta, 19, 15 ).
+horario( 184, Terca, 22, 45 ).
 
-horario( 201, Sabado, 21, 15 ).
-horario( 201, Sabado, 9, 0 ).
-horario( 201, Segunda, 14, 45 ).
-horario( 201, Segunda, 19, 0 ).
-horario( 201, Terca, 12, 15 ).
-horario( 201, Terca, 19, 0 ).
+horario( 201, Domingo, 21, 0 ).
+horario( 201, Domingo, 7, 0 ).
+horario( 201, Segunda, 14, 15 ).
+horario( 201, Segunda, 15, 0 ).
 
 horario( 467, Domingo, 10, 0 ).
-horario( 467, Domingo, 9, 15 ).
-horario( 467, Domingo, 9, 45 ).
-horario( 467, Quinta, 11, 45 ).
-horario( 467, Quinta, 13, 15 ).
-horario( 467, Quinta, 19, 45 ).
-horario( 467, Terca, 14, 0 ).
-horario( 467, Terca, 16, 0 ).
-horario( 467, Terca, 21, 15 ).
+horario( 467, Domingo, 16, 30 ).
+horario( 467, Quarta, 11, 30 ).
+horario( 467, Quarta, 18, 0 ).
 
-horario( 468, Quarta, 10, 15 ).
-horario( 468, Quarta, 11, 15 ).
-horario( 468, Quarta, 9, 45 ).
-horario( 468, Quinta, 12, 30 ).
-horario( 468, Quinta, 17, 15 ).
-horario( 468, Quinta, 9, 45 ).
-horario( 468, Sabado, 16, 30 ).
-horario( 468, Sabado, 21, 0 ).
-horario( 468, Sabado, 8, 30 ).
+horario( 468, Domingo, 10, 45 ).
+horario( 468, Domingo, 18, 15 ).
+horario( 468, Domingo, 21, 30 ).
+horario( 468, Quarta, 11, 0 ).
+horario( 468, Quarta, 22, 45 ).
+horario( 468, Quarta, 7, 0 ).
+horario( 468, Segunda, 10, 45 ).
+horario( 468, Segunda, 13, 0 ).
+horario( 468, Segunda, 15, 30 ).
+horario( 468, Terca, 13, 30 ).
+horario( 468, Terca, 18, 30 ).
+horario( 468, Terca, 22, 15 ).
 
-horario( 470, Terca, 15, 15 ).
+horario( 470, Quarta, 14, 30 ).
+horario( 470, Quarta, 15, 45 ).
+horario( 470, Quarta, 8, 30 ).
+horario( 470, Terca, 11, 15 ).
+horario( 470, Terca, 14, 15 ).
+horario( 470, Terca, 17, 45 ).
 
-horario( 471, Quinta, 13, 15 ).
+horario( 471, Quinta, 7, 15 ).
+horario( 471, Segunda, 19, 15 ).
 
-horario( 479, Quarta, 19, 45 ).
-horario( 479, Sexta, 13, 45 ).
-horario( 479, Terca, 14, 30 ).
+horario( 479, Domingo, 20, 0 ).
+horario( 479, Domingo, 8, 45 ).
+horario( 479, Terca, 16, 45 ).
+horario( 479, Terca, 22, 30 ).
 
-horario( 714, Terca, 15, 45 ).
+horario( 714, Domingo, 14, 45 ).
+horario( 714, Domingo, 7, 0 ).
+horario( 714, Domingo, 9, 15 ).
+horario( 714, Quarta, 15, 0 ).
+horario( 714, Quarta, 15, 15 ).
+horario( 714, Quarta, 16, 30 ).
+horario( 714, Sabado, 11, 30 ).
+horario( 714, Sabado, 11, 45 ).
+horario( 714, Sabado, 9, 45 ).
+horario( 714, Terca, 11, 0 ).
+horario( 714, Terca, 21, 15 ).
+horario( 714, Terca, 7, 30 ).
 
-horario( 748, Sexta, 11, 15 ).
-horario( 748, Sexta, 14, 45 ).
-horario( 748, Terca, 10, 45 ).
-horario( 748, Terca, 7, 15 ).
+horario( 748, Quarta, 10, 30 ).
+horario( 748, Quarta, 8, 45 ).
+horario( 748, Quinta, 11, 0 ).
+horario( 748, Quinta, 17, 15 ).
+horario( 748, Sabado, 6, 30 ).
+horario( 748, Sabado, 7, 0 ).
 
-horario( 750, Quarta, 16, 15 ).
-horario( 750, Quarta, 17, 30 ).
-horario( 750, Quarta, 9, 30 ).
-horario( 750, Sabado, 10, 45 ).
-horario( 750, Sabado, 15, 15 ).
-horario( 750, Sabado, 17, 30 ).
-horario( 750, Sabado, 6, 45 ).
-horario( 750, Sabado, 7, 30 ).
-horario( 750, Sabado, 7, 45 ).
+horario( 750, Quinta, 7, 15 ).
+horario( 750, Quinta, 8, 30 ).
+horario( 750, Segunda, 10, 15 ).
+horario( 750, Segunda, 22, 45 ).
 
+horario( 751, Domingo, 13, 15 ).
+horario( 751, Domingo, 16, 45 ).
+horario( 751, Domingo, 19, 45 ).
+horario( 751, Domingo, 20, 0 ).
 horario( 751, Domingo, 21, 30 ).
+horario( 751, Domingo, 9, 45 ).
+horario( 751, Quinta, 17, 30 ).
+horario( 751, Quinta, 6, 45 ).
+horario( 751, Quinta, 7, 0 ).
+horario( 751, Segunda, 10, 0 ).
+horario( 751, Segunda, 17, 45 ).
+horario( 751, Segunda, 19, 15 ).
 
-horario( 776, Sabado, 13, 15 ).
-horario( 776, Sabado, 17, 30 ).
-horario( 776, Sabado, 21, 15 ).
-horario( 776, Sabado, 6, 30 ).
-horario( 776, Sabado, 6, 45 ).
-horario( 776, Sabado, 9, 0 ).
+horario( 776, Sexta, 11, 0 ).
+horario( 776, Sexta, 12, 30 ).
+horario( 776, Sexta, 7, 30 ).
+horario( 776, Terca, 15, 15 ).
+horario( 776, Terca, 18, 15 ).
+horario( 776, Terca, 19, 15 ).
 

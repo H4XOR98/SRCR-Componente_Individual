@@ -8,7 +8,7 @@ public class Carreira {
     private int[] minutos = new int[]{0,15,30,45,60};
 
     private final int MaxDiasSemana = 5;
-    private final int MinDiasSemana = 1;
+    private final int MinDiasSemana = 2;
     private final int MaxNumHoras = 4;
     private final int MinNumHoras = 1;
 
