@@ -1,7 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="50a692ca-6f77-47a7-9cbf-6fae52413f7e" name="Default Changelist" comment="" />
+    <list default="true" id="50a692ca-6f77-47a7-9cbf-6fae52413f7e" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/jxl.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/jxl.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Sistema.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Sistema.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../factos.pl" beforeDir="false" afterPath="$PROJECT_DIR$/../factos.pl" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ficheirosfornecidos/lista_adjacencias_paragens.xls" beforeDir="false" afterPath="$PROJECT_DIR$/../ficheirosfornecidos/lista_adjacencias_paragens.xls" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../main.pl" beforeDir="false" afterPath="$PROJECT_DIR$/../main.pl" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -14,7 +22,11 @@
       </list>
     </option>
   </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
   <component name="ProjectId" id="1cbf4C4N5qnuS5KnpYzjo56NX23" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="autoscrollToSource" value="true" />
     <option name="hideEmptyMiddlePackages" value="true" />
@@ -23,11 +35,13 @@
   </component>
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
-    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.last.edited" value="Libraries" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
   </component>
@@ -71,6 +85,7 @@
       <workItem from="1590828384636" duration="21000" />
       <workItem from="1590828933393" duration="201000" />
       <workItem from="1590829861983" duration="802000" />
+      <workItem from="1590856736590" duration="153000" />
     </task>
     <servers />
   </component>
@@ -130,9 +145,10 @@
       <screen x="1680" y="146" width="1360" height="768" />
     </state>
     <state width="1318" height="250" key="GridCell.Tab.1.right/0.0.1680.1050/1680.146.1360.768@1680.146.1360.768" timestamp="1590806211506" />
-    <state x="1680" y="146" width="1024" height="768" key="SettingsEditor" timestamp="1590802053760">
-      <screen x="1680" y="146" width="1360" height="768" />
+    <state x="0" y="0" width="1024" height="768" key="SettingsEditor" timestamp="1590856827979">
+      <screen x="0" y="0" width="1680" height="1050" />
     </state>
     <state x="1680" y="146" width="1024" height="768" key="SettingsEditor/0.0.1680.1050/1680.146.1360.768@1680.146.1360.768" timestamp="1590802053760" />
+    <state x="0" y="0" key="SettingsEditor/0.0.1680.1050/1680.169.1360.745@0.0.1680.1050" timestamp="1590856827979" />
   </component>
 </project>

@@ -80,7 +80,7 @@ public class Sistema {
 
         sb.append("\n\n\n" +
                 "% ADJACENTES\n" +
-                "% Extensão do predicado adjacente: Carreira, GidOrigem, GidDestino, Distancia -> {V,F}\n\n");
+                "% Extensão do predicado adjacente: GidOrigem, GidDestino, Carreira, Distancia -> {V,F}\n\n");
         for(Carreira carreira : this.carreiras.values()){
             sb.append(carreira.toString());
         }

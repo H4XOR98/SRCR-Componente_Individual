@@ -10,38 +10,66 @@
 
 % - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
+:- include(auxiliares).
 :- include(factos).
 
 % - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-
-%Calcular um trajeto entre dois pontos
-
-
-% Pesquisa em profundidade primeiro multi-estados
-
-resolve_pp_h(Origem, Destino, Caminho) :- profundidade(Origem, Destino, [Origem], Caminho),
-                                          escrever(Caminho).
-
-profundidade(Destino, Destino, Visitados, Caminho) :- inverso(Visitados, Caminho).
-
-profundidade(Origem, Destino, Visitados, Caminho) :- adjacente_h(Origem, Prox),
-										             \+ member(Prox, Visitados),
-										             profundidade(Prox, Destino, [Prox|Visitados], Caminho).
-
-adjacente_h(Paragem, ProxParagem) :- adjacente(Paragem, ProxParagem, _, _).
+% Calcular um trajeto entre dois pontos
+% - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
 
+trajetoEntrePontos(Origem, Destino, Caminho) :- calculaTrajeto(Origem, Destino, [Origem], Caminho), escrever(Caminho).
+
+calculaTrajeto(Destino, Destino, Visitadas, Caminho) :- inverso(Visitadas, Caminho).
+calculaTrajeto(Origem, Destino, Visitadas, Caminho) :- isAdjacente(Origem, Proxima),
+										             \+ member(Proxima, Visitadas),
+										             calculaTrajeto(Proxima, Destino, [Proxima|Visitadas], Caminho).
+
+
+% - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+% Selecionar apenas algumas das operadoras de transporte para um determinado percurso
+% - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+trajetoEntrePontosPorOperadora(Origem, Destino, Operadoras, Caminho) :- calculaTrajetoPorOperadora(Origem, Destino, Operadoras, [Origem], Caminho),
+                                          			  					escrever(Caminho).
+
+calculaTrajetoPorOperadora(Destino, Destino, Operadoras, Visitadas, Caminho) :- paragem( Destino, _, _, _, _, _, _, OperadoraDestino, _ ),
+																  				member(OperadoraDestino, Operadoras), 
+																  				inverso(Visitadas, Caminho).
+calculaTrajetoPorOperadora(Origem, Destino, Operadoras, Visitadas, Caminho) :- paragem( Origem, _, _, _, _, _, _, OperadoraOrigem, _ ),
+															     			   member(OperadoraOrigem, Operadoras), 
+																 			   isAdjacente(Origem, Proxima),
+										             			 			   \+ member(Proxima, Visitadas),
+										            			 			   calculaTrajetoPorOperadora(Proxima, Destino, Operadoras, [Proxima|Visitadas], Caminho).
+
+
+% - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+% Excluir um ou mais operadores de transporte para o percurso.
+% - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+trajetoEntrePontosSemOperadora(Origem, Destino, Operadoras, Caminho) :- calculaTrajetoSemOperadora(Origem, Destino, Operadoras, [Origem], Caminho),
+                                          			  					escrever(Caminho).
+
+calculaTrajetoSemOperadora(Destino, Destino, Operadoras, Visitadas, Caminho) :- paragem( Destino, _, _, _, _, _, _, OperadoraDestino, _ ),
+																  				\+ member(OperadoraDestino, Operadoras), 
+																  				inverso(Visitadas, Caminho).
+calculaTrajetoSemOperadora(Origem, Destino, Operadoras, Visitadas, Caminho) :- paragem( Origem, _, _, _, _, _, _, OperadoraOrigem, _ ),
+															     			   \+ member(OperadoraOrigem, Operadoras), 
+																 			   isAdjacente(Origem, Proxima),
+										             			 			   \+ member(Proxima, Visitadas),
+										            			 			   calculaTrajetoSeOperadora(Proxima, Destino, Operadoras, [Proxima|Visitadas], Caminho).
+
+
+% - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+% Identificar quais as paragens com o maior número de carreiras num determinado percurso.
+% - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
 
 
 
 
-inverso(Xs, Ys):-
-	inverso(Xs, [], Ys).
 
-inverso([], Xs, Xs).
-inverso([X|Xs],Ys, Zs):-
-	inverso(Xs, [X|Ys], Zs).
 
-escrever([]).
-escrever([X|L]) :- write(X), write(','), escrever(L).
+% - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+% Escolher o menor percurso (usando critério menor número de paragens)
+% - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -

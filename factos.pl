@@ -1063,7 +1063,7 @@ paragem( 1032, -104222.84172433561, -94001.25535769734, 'Bom', 'Fechado dos Lado
 
 
 % ADJACENTES
-% Extensão do predicado adjacente: Carreira, GidOrigem, GidDestino, Distancia -> {V,F}
+% Extensão do predicado adjacente: GidOrigem, GidDestino, Carreira, Distancia -> {V,F}
 
 adjacente( 183, 791, 1, 87.63541293336934 ).
 adjacente( 791, 595, 1, 698.6929317661744 ).
