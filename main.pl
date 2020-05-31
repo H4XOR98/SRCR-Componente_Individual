@@ -17,7 +17,6 @@
 % Calcular um trajeto entre dois pontos
 % - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
-
 trajetoEntrePontos(Origem, Destino, Caminho) :- calculaTrajeto(Origem, Destino, [Origem], Caminho), escrever(Caminho).
 
 calculaTrajeto(Destino, Destino, Visitadas, Caminho) :- inverso(Visitadas, Caminho).
@@ -65,11 +64,43 @@ calculaTrajetoSemOperadora(Origem, Destino, Operadoras, Visitadas, Caminho) :- p
 % - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
 
+% - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+% Escolher o menor percurso (usando critério menor número de paragens).
+% - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
 
+% - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+% Escolher o percurso mais rápido (usando critério da distância).
+% - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
 
 
 % - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-% Escolher o menor percurso (usando critério menor número de paragens)
+% Escolher o percurso que passe apenas por abrigos com publicidade.
 % - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+
+trajetoEntrePontosComPublicidade(Origem, Destino, Caminho) :- calculaTrajetoComPublicidade(Origem, Destino, [Origem], Caminho), escrever(Caminho).
+
+calculaTrajetoComPublicidade(Destino, Destino, Visitadas, Caminho) :- paragem( Destino, _, _, _, _, 'Yes', _, _, _ ), inverso(Visitadas, Caminho).
+calculaTrajetoComPublicidade(Origem, Destino, Visitadas, Caminho) :- isAdjacente(Origem, Proxima),
+													   				 paragem( Origem, _, _, _, _, 'Yes' , _, _, _ ),
+																     \+ member(Proxima, Visitadas),
+										               				 calculaTrajetoComPublicidade(Proxima, Destino, [Proxima|Visitadas], Caminho).
+
+
+% - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+% Escolher o percurso que passe apenas por paragens abrigadas.
+% - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+
+trajetoEntrePontosComAbrigo(Origem, Destino, Caminho) :- calculaTrajetoComAbrigo(Origem, Destino, [Origem], Caminho), escrever(Caminho).
+
+calculaTrajetoComAbrigo(Destino, Destino, Visitadas, Caminho) :- paragem( Destino, _, _, _, Abrigo, _, _, _, _ ), 
+																 member(Abrigo,['Aberto dos Lados','Fechado dos Lados']), 
+																 inverso(Visitadas, Caminho).
+calculaTrajetoComAbrigo(Origem, Destino, Visitadas, Caminho) :- isAdjacente(Origem, Proxima),
+													   			paragem( Origem, _, _, _, Abrigo, _, _, _, _ ),
+																member(Abrigo,['Aberto dos Lados','Fechado dos Lados']), 
+																\+ member(Proxima, Visitadas),
+										               			calculaTrajetoComAbrigo(Proxima, Destino, [Proxima|Visitadas], Caminho).
