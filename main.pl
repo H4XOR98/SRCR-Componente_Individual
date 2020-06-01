@@ -88,35 +88,36 @@ calculaParagensComMaisCarreiras(Origem, Destino, Visitadas, MaxCarreiras, Caminh
 
 % - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 % Escolher o percurso mais rápido (usando critério da distância).
+% Algoritmo de Pesquisa : Pesquisa Informada( A* )
 % - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
-resolve_aestrela(Origem, Destino, Caminho/Custo) :-
+percursoMaisRapido_Distancia(Origem, Destino, Caminho/Custo) :-
 	distanciaEuclidiana(Origem, Destino, Estima),
-	aestrela(Destino, [[Origem]/0/Estima], InvCaminho/Custo/_),
+	calculaMaisRapido_Distancia(Destino, [[Origem]/0/Estima], InvCaminho/Custo/_),
 	inverso(InvCaminho, Caminho).
 
-aestrela(Destino, Caminhos, Caminho) :-
-	obtem_melhor(Destino, Caminhos, Caminho),
+calculaMaisRapido_Distancia(Destino, Caminhos, Caminho) :-
+	obtem_MaisRapido_Distancia(Destino, Caminhos, Caminho),
 	Caminho = [Destino|_]/_/_.
 
-aestrela(Destino, Caminhos, SolucaoCaminho) :-
-	obtem_melhor(Destino, Caminhos, MelhorCaminho),
+calculaMaisRapido_Distancia(Destino, Caminhos, SolucaoCaminho) :-
+	obtem_MaisRapido_Distancia(Destino, Caminhos, MelhorCaminho),
 	seleciona(MelhorCaminho, Caminhos, OutrosCaminhos),
-	expande_aestrela(Destino, MelhorCaminho, ExpCaminhos),
+	expande_MaisRapido_Distancia(Destino, MelhorCaminho, ExpCaminhos),
 	append(OutrosCaminhos, ExpCaminhos, NovoCaminhos),
-    aestrela(Destino, NovoCaminhos, SolucaoCaminho).		
+    calculaMaisRapido_Distancia(Destino, NovoCaminhos, SolucaoCaminho).		
 
 
-obtem_melhor(Destino, [Caminho], Caminho) :- !.
+obtem_MaisRapido_Distancia(Destino, [Caminho], Caminho) :- !.
 
-obtem_melhor(Destino, [Caminho1/Custo1/Est1,_/Custo2/Est2|Caminhos], MelhorCaminho) :-
+obtem_MaisRapido_Distancia(Destino, [Caminho1/Custo1/Est1,_/Custo2/Est2|Caminhos], MelhorCaminho) :-
 	Custo1 + Est1 =< Custo2 + Est2, !,
-	obtem_melhor(Destino, [Caminho1/Custo1/Est1|Caminhos], MelhorCaminho).
+	obtem_MaisRapido_Distancia(Destino, [Caminho1/Custo1/Est1|Caminhos], MelhorCaminho).
 	
-obtem_melhor(Destino,[_|Caminhos], MelhorCaminho) :- 
-	obtem_melhor(Destino,Caminhos, MelhorCaminho).
+obtem_MaisRapido_Distancia(Destino,[_|Caminhos], MelhorCaminho) :- 
+	obtem_MaisRapido_Distancia(Destino,Caminhos, MelhorCaminho).
 
-expande_aestrela(Destino,Caminho, ExpCaminhos) :-
+expande_MaisRapido_Distancia(Destino,Caminho, ExpCaminhos) :-
 	findall(NovoCaminho, isAdjacente(Destino,Caminho,NovoCaminho), ExpCaminhos).
 
 isAdjacente(Destino,[Origem|Caminho]/Custo/_, [Proxima,Origem|Caminho]/NovoCusto/Estima) :-
