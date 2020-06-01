@@ -30,5 +30,12 @@ distanciaEuclidiana( Origem, Destino, R ) :- paragem( Origem, Latitude1, Longitu
                                              R is sqrt((Latitudes ** 2) + (Longitudes ** 2)).
 
 
+
+calculaParagensComMaisCarreiras( NovaParagem/NovoNumCarreiras, [ ], [NovaParagem]/NovoNumCarreiras ).
+calculaParagensComMaisCarreiras( NovaParagem/NovoNumCarreiras, [Paragem | Paragens]/NumCarreiras, [NovaParagem]/NovoNumCarreiras ) :- NovoNumCarreiras > NumCarreiras.  
+calculaParagensComMaisCarreiras( NovaParagem/NovoNumCarreiras, [Paragem | Paragens]/NumCarreiras, [Paragem | Paragens]/NumCarreiras ) :- NovoNumCarreiras < NumCarreiras.
+calculaParagensComMaisCarreiras( NovaParagem/NovoNumCarreiras, [Paragem | Paragens]/NumCarreiras, R/NumCarreiras ) :- NovoNumCarreiras == NumCarreiras, append([Paragem | Paragens], [NovaParagem], R).
+
+
 seleciona(E, [E|Xs], Xs).
 seleciona(E, [X|Xs], [X|Ys]) :- seleciona(E, Xs, Ys).	
