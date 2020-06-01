@@ -31,10 +31,10 @@ distanciaEuclidiana( Origem, Destino, R ) :- paragem( Origem, Latitude1, Longitu
 
 
 
-calculaParagensComMaisCarreiras( NovaParagem/NovoNumCarreiras, [ ], [NovaParagem]/NovoNumCarreiras ).
-calculaParagensComMaisCarreiras( NovaParagem/NovoNumCarreiras, [Paragem | Paragens]/NumCarreiras, [NovaParagem]/NovoNumCarreiras ) :- NovoNumCarreiras > NumCarreiras.  
-calculaParagensComMaisCarreiras( NovaParagem/NovoNumCarreiras, [Paragem | Paragens]/NumCarreiras, [Paragem | Paragens]/NumCarreiras ) :- NovoNumCarreiras < NumCarreiras.
-calculaParagensComMaisCarreiras( NovaParagem/NovoNumCarreiras, [Paragem | Paragens]/NumCarreiras, R/NumCarreiras ) :- NovoNumCarreiras == NumCarreiras, append([Paragem | Paragens], [NovaParagem], R).
+paragemComMaisCarreiras( NovaParagem/NovoNumCarreiras, [ ], [NovaParagem]/NovoNumCarreiras ).
+paragemComMaisCarreiras( NovaParagem/NovoNumCarreiras, [Paragem | Paragens]/NumCarreiras, [NovaParagem]/NovoNumCarreiras ) :- NovoNumCarreiras > NumCarreiras.  
+paragemComMaisCarreiras( NovaParagem/NovoNumCarreiras, [Paragem | Paragens]/NumCarreiras, [Paragem | Paragens]/NumCarreiras ) :- NovoNumCarreiras < NumCarreiras.
+paragemComMaisCarreiras( NovaParagem/NovoNumCarreiras, [Paragem | Paragens]/NumCarreiras, R/NumCarreiras ) :- NovoNumCarreiras == NumCarreiras, append([Paragem | Paragens], [NovaParagem], R).
 
 
 seleciona(E, [E|Xs], Xs).

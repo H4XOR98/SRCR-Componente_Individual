@@ -63,21 +63,21 @@ calculaTrajetoSemOperadora(Origem, Destino, Operadoras, Visitadas, Caminho) :- p
 % Identificar quais as paragens com o maior número de carreiras num determinado percurso.
 % - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
-trajeto(Origem, Destino, Caminho/Paragens) :- paragem( Origem, _, _, _, _, _, Carreiras, _, _ ),
-                                              length(Carreiras, NumCarreirasOrigem),
-											  calcula(Origem, Destino, [Origem], [Origem]/NumCarreirasOrigem, Caminho/Paragens),
-											  escrever(Caminho).
+trajetoParagensMaisComCarreiras(Origem, Destino, Caminho/Carreiras) :- paragem( Origem, _, _, _, _, _, CarreirasOrigem, _, _ ),
+                                              						   length(CarreirasOrigem, NumCarreirasOrigem),
+											  						   calculaParagensComMaisCarreiras(Origem, Destino, [Origem], [Origem]/NumCarreirasOrigem, Caminho/Carreiras),
+											  						   escrever(Caminho).
 
-calcula(Destino, Destino, Visitadas, X, Caminho/Paragens) :- paragem( Destino, _, _, _, _, _, Carreiras, _, _ ),
-                                                          	 length(Carreiras, NumCarreirasDestino),
-														  	 calculaParagensComMaisCarreiras(Destino/NumCarreirasDestino, X, Paragens), 
-														  	 inverso(Visitadas, Caminho).
-calcula(Origem, Destino, Visitadas, X, Caminho/Paragens) :- isAdjacente(Origem, Proxima), 
-										             		\+ member(Proxima, Visitadas),
-														 	paragem( Proxima, _, _, _, _, _, Carreiras, _, _ ),
-                                                         	length(Carreiras, NumCarreirasProx),
-														 	calculaParagensComMaisCarreiras(Proxima/NumCarreirasProx, X, R),
-										             	 	calcula(Proxima, Destino, [Proxima|Visitadas], R, Caminho/Paragens).
+calculaParagensComMaisCarreiras(Destino, Destino, Visitadas, MaxCarreiras, Caminho/Carreiras) :- paragem( Destino, _, _, _, _, _, CarreirasDestino, _, _ ),
+                                                          	 			 						 length(CarreirasDestino, NumCarreirasDestino),
+																		 						 paragemComMaisCarreiras(Destino/NumCarreirasDestino, MaxCarreiras, Carreiras), 
+														  	 			 						 inverso(Visitadas, Caminho).
+calculaParagensComMaisCarreiras(Origem, Destino, Visitadas, MaxCarreiras, Caminho/Carreiras) :- isAdjacente(Origem, Proxima), 
+										             											\+ member(Proxima, Visitadas),
+														 										paragem( Proxima, _, _, _, _, _, CarreirasProxima, _, _ ),
+                                                         										length(CarreirasProxima, NumCarreirasProxima),
+														 										paragemComMaisCarreiras(Proxima/NumCarreirasProxima, MaxCarreiras, Result),
+										             	 										calculaParagensComMaisCarreiras(Proxima, Destino, [Proxima|Visitadas], Result, Caminho/Carreiras).
 
 
 
