@@ -90,6 +90,40 @@ calculaParagensComMaisCarreiras(Origem, Destino, Visitadas, MaxCarreiras, Caminh
 % Escolher o percurso mais rápido (usando critério da distância).
 % - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
+resolve_aestrela(Origem, Destino, Caminho/Custo) :-
+	distanciaEuclidiana(Origem, Destino, Estima),
+	aestrela(Destino, [[Origem]/0/Estima], InvCaminho/Custo/_),
+	inverso(InvCaminho, Caminho).
+
+aestrela(Destino, Caminhos, Caminho) :-
+	obtem_melhor(Destino, Caminhos, Caminho),
+	Caminho = [Destino|_]/_/_.
+
+aestrela(Destino, Caminhos, SolucaoCaminho) :-
+	obtem_melhor(Destino, Caminhos, MelhorCaminho),
+	seleciona(MelhorCaminho, Caminhos, OutrosCaminhos),
+	expande_aestrela(Destino, MelhorCaminho, ExpCaminhos),
+	append(OutrosCaminhos, ExpCaminhos, NovoCaminhos),
+    aestrela(Destino, NovoCaminhos, SolucaoCaminho).		
+
+
+obtem_melhor(Destino, [Caminho], Caminho) :- !.
+
+obtem_melhor(Destino, [Caminho1/Custo1/Est1,_/Custo2/Est2|Caminhos], MelhorCaminho) :-
+	Custo1 + Est1 =< Custo2 + Est2, !,
+	obtem_melhor(Destino, [Caminho1/Custo1/Est1|Caminhos], MelhorCaminho).
+	
+obtem_melhor(Destino,[_|Caminhos], MelhorCaminho) :- 
+	obtem_melhor(Destino,Caminhos, MelhorCaminho).
+
+expande_aestrela(Destino,Caminho, ExpCaminhos) :-
+	findall(NovoCaminho, isAdjacente(Destino,Caminho,NovoCaminho), ExpCaminhos).
+
+isAdjacente(Destino,[Origem|Caminho]/Custo/_, [Proxima,Origem|Caminho]/NovoCusto/Estima) :-
+	adjacente(Origem, Proxima, _, PassoCusto),
+	\+ member(Proxima, Caminho),
+	NovoCusto is Custo + PassoCusto,
+	distanciaEuclidiana(Proxima, Destino, Estima).
 
 
 % - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
