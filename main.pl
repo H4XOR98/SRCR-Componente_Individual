@@ -14,7 +14,8 @@
 :- include(factos).
 
 % - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-% Calcular um trajeto entre dois pontos
+% Calcular um trajeto entre dois pontos.
+% Algoritmo de Pesquisa : Pesquisa Não-Informada( Primeiro em Profundidade Com Multi-Estados).
 % - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
 trajetoEntrePontos(Origem, Destino, Caminho) :- calculaTrajeto(Origem, Destino, [Origem], Caminho), escrever(Caminho).
@@ -26,7 +27,8 @@ calculaTrajeto(Origem, Destino, Visitadas, Caminho) :- isAdjacente(Origem, Proxi
 
 
 % - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-% Selecionar apenas algumas das operadoras de transporte para um determinado percurso
+% Selecionar apenas algumas das operadoras de transporte para um determinado percurso.
+% Algoritmo de Pesquisa : Pesquisa Não-Informada( Primeiro em Profundidade Com Multi-Estados)
 % - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
 trajetoEntrePontosPorOperadora(Origem, Destino, Operadoras, Caminho) :- calculaTrajetoPorOperadora(Origem, Destino, Operadoras, [Origem], Caminho),
@@ -44,6 +46,7 @@ calculaTrajetoPorOperadora(Origem, Destino, Operadoras, Visitadas, Caminho) :- p
 
 % - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 % Excluir um ou mais operadores de transporte para o percurso.
+% Algoritmo de Pesquisa : Pesquisa Não-Informada( Primeiro em Profundidade Com Multi-Estados)
 % - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
 trajetoEntrePontosSemOperadora(Origem, Destino, Operadoras, Caminho) :- calculaTrajetoSemOperadora(Origem, Destino, Operadoras, [Origem], Caminho),
@@ -61,6 +64,7 @@ calculaTrajetoSemOperadora(Origem, Destino, Operadoras, Visitadas, Caminho) :- p
 
 % - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 % Identificar quais as paragens com o maior número de carreiras num determinado percurso.
+% Algoritmo de Pesquisa : Pesquisa Não-Informada( Primeiro em Profundidade Com Multi-Estados)
 % - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
 trajetoParagensMaisComCarreiras(Origem, Destino, Caminho/Carreiras) :- paragem( Origem, _, _, _, _, _, CarreirasOrigem, _, _ ),
@@ -88,7 +92,7 @@ calculaParagensComMaisCarreiras(Origem, Destino, Visitadas, MaxCarreiras, Caminh
 
 % - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 % Escolher o percurso mais rápido (usando critério da distância).
-% Algoritmo de Pesquisa : Pesquisa Informada( A* )
+% Algoritmo de Pesquisa : Pesquisa Informada( Algoritmo A* )
 % - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
 percursoMaisRapido_Distancia(Origem, Destino, Caminho/Custo) :-
