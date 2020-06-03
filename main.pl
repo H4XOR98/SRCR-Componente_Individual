@@ -166,9 +166,6 @@ calculaTrajetoComAbrigo(Origem, Destino, Visitadas, Caminho) :- isAdjacente(Orig
 % Escolher um ou mais pontos intermédios por onde o percurso deverá passar.
 % - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
-
-
-
 trajetoPorIntermedias(Origem, Destino, Intermedias, Caminho/Sucesso) :- calculaTrajetoPorIntermedias(Origem, Destino, Intermedias, [Origem], Caminho/Sucesso).
 
 calculaTrajetoPorIntermedias(Destino, Destino, Intermedias, Visitadas, Caminho/Sucesso) :- length(Intermedias,0) -> Sucesso = true, inverso(Visitadas, Caminho); Caminho = [], Sucesso = false.
