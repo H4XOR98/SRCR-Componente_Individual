@@ -169,10 +169,10 @@ calculaTrajetoComAbrigo(Origem, Destino, Visitadas, Caminho) :- isAdjacente(Orig
 
 
 
-trajeto(Origem, Destino, Intermedias, Caminho/S) :- profundidade(Origem, Destino, Intermedias, [Origem], Caminho/S).
+trajetoPorIntermedias(Origem, Destino, Intermedias, Caminho/Sucesso) :- calculaTrajetoPorIntermedias(Origem, Destino, Intermedias, [Origem], Caminho/Sucesso).
 
-profundidade(Destino, Destino, Intermedias, Visitadas, Caminho/S) :- length(Intermedias,0) -> S = true, inverso(Visitadas, Caminho); Caminho = [], S = false.
-profundidade(Origem, Destino, Intermedias, Visitadas, Caminho/S) :- isAdjacente(Origem, Proxima),
-										             	  \+ member(Proxima, Visitadas),
-													 	  removeEmComum(Proxima,Intermedias,NovasIntermedias),
-										             	  profundidade(Proxima, Destino, NovasIntermedias, [Proxima|Visitadas], Caminho/S).
+calculaTrajetoPorIntermedias(Destino, Destino, Intermedias, Visitadas, Caminho/Sucesso) :- length(Intermedias,0) -> Sucesso = true, inverso(Visitadas, Caminho); Caminho = [], Sucesso = false.
+calculaTrajetoPorIntermedias(Origem, Destino, Intermedias, Visitadas, Caminho/Sucesso) :- isAdjacente(Origem, Proxima),
+										             	  								  \+ member(Proxima, Visitadas),
+													 	                                  removeEmComum(Proxima,Intermedias,NovasIntermedias),
+										             	                                  calculaTrajetoPorIntermedias(Proxima, Destino, NovasIntermedias, [Proxima|Visitadas], Caminho/Sucesso).
