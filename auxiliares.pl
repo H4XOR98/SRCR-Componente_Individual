@@ -39,3 +39,7 @@ paragemComMaisCarreiras( NovaParagem/NovoNumCarreiras, [Paragem | Paragens]/NumC
 
 seleciona(E, [E|Xs], Xs).
 seleciona(E, [X|Xs], [X|Ys]) :- seleciona(E, Xs, Ys).	
+
+removeEmComum( X , [], [] ).
+removeEmComum( X, [X|T], T ).
+removeEmComum( X, [H|T], [H|R] ) :- removeEmComum( X, T, R ).

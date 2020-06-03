@@ -14,8 +14,10 @@ public class Carreira {
 
 
     public void addParagem(Paragem paragem){
-        this.addAdjacente(paragem);
-        this.percurso.add(paragem);
+        if(!percurso.contains(paragem)) {
+            this.addAdjacente(paragem);
+            this.percurso.add(paragem);
+        }
     }
 
     private void addAdjacente(Paragem paragem){

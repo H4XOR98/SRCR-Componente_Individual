@@ -160,3 +160,19 @@ calculaTrajetoComAbrigo(Origem, Destino, Visitadas, Caminho) :- isAdjacente(Orig
 																member(Abrigo,['Aberto dos Lados','Fechado dos Lados']), 
 																\+ member(Proxima, Visitadas),
 										               			calculaTrajetoComAbrigo(Proxima, Destino, [Proxima|Visitadas], Caminho).
+
+
+% - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+% Escolher um ou mais pontos intermédios por onde o percurso deverá passar.
+% - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+
+
+
+trajeto(Origem, Destino, Intermedias, Caminho/S) :- profundidade(Origem, Destino, Intermedias, [Origem], Caminho/S).
+
+profundidade(Destino, Destino, Intermedias, Visitadas, Caminho/S) :- length(Intermedias,0) -> S = true, inverso(Visitadas, Caminho); Caminho = [], S = false.
+profundidade(Origem, Destino, Intermedias, Visitadas, Caminho/S) :- isAdjacente(Origem, Proxima),
+										             	  \+ member(Proxima, Visitadas),
+													 	  removeEmComum(Proxima,Intermedias,NovasIntermedias),
+										             	  profundidade(Proxima, Destino, NovasIntermedias, [Proxima|Visitadas], Caminho/S).

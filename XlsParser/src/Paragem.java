@@ -1,5 +1,6 @@
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 
 public class Paragem {
     private int gid;
@@ -33,6 +34,15 @@ public class Paragem {
     public int getGid() {
         return gid;
     }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || this.getClass() != o.getClass()) return false;
+        Paragem paragem = (Paragem) o;
+        return this.gid == paragem.gid;
+    }
+
 
     @Override
     public String toString() {

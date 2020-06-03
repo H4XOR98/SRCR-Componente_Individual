@@ -11,7 +11,7 @@ import java.text.Normalizer;
 public class Main {
 
     public static void main(String[] args) throws IOException, BiffException {
-        Workbook workbook = Workbook.getWorkbook(new File("/Users/lazaropinheiro/Desktop/SRCR/ficheirosfornecidos/lista_adjacencias_paragens.xls"));
+        Workbook workbook = Workbook.getWorkbook(new File("/Users/lazaropinheiro/SRCR-Componente_Individual/ficheirosfornecidos/lista_adjacencias_paragens.xls"));
         int Num = workbook.getNumberOfSheets();
         StringBuilder sb;
 
@@ -34,7 +34,7 @@ public class Main {
             }
         }
 
-        FileWriter myWriter = new FileWriter("/Users/lazaropinheiro/Desktop/SRCR/factos.pl");
+        FileWriter myWriter = new FileWriter("/Users/lazaropinheiro/SRCR-Componente_Individual/factos.pl");
         myWriter.write(sistema.toString());
         myWriter.close();
     }
