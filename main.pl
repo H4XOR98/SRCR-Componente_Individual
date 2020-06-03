@@ -31,8 +31,7 @@ calculaTrajeto(Origem, Destino, Visitadas, Caminho) :- isAdjacente(Origem, Proxi
 % Algoritmo de Pesquisa : Pesquisa Não-Informada( Primeiro em Profundidade Com Multi-Estados)
 % - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
-trajetoEntrePontosPorOperadora(Origem, Destino, Operadoras, Caminho) :- calculaTrajetoPorOperadora(Origem, Destino, Operadoras, [Origem], Caminho),
-                                          			  					escrever(Caminho).
+trajetoEntrePontosPorOperadora(Origem, Destino, Operadoras, Caminho) :- calculaTrajetoPorOperadora(Origem, Destino, Operadoras, [Origem], Caminho).
 
 calculaTrajetoPorOperadora(Destino, Destino, Operadoras, Visitadas, Caminho) :- paragem( Destino, _, _, _, _, _, _, OperadoraDestino, _ ),
 																  				member(OperadoraDestino, Operadoras), 
