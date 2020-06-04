@@ -165,10 +165,10 @@ calculaTrajetoComAbrigo(Origem, Destino, Visitadas, Caminho) :- isAdjacente(Orig
 % Escolher um ou mais pontos intermédios por onde o percurso deverá passar.
 % - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
-trajetoPorIntermedias(Origem, Destino, Intermedias, Caminho/Sucesso) :- calculaTrajetoPorIntermedias(Origem, Destino, Intermedias, [Origem], Caminho/Sucesso).
+trajetoPorIntermedias(Origem, Destino, Intermedias, Caminho) :- removeEmComum(Origem,Intermedias,NovasIntermedias), calculaTrajetoPorIntermedias(Origem, Destino, NovasIntermedias, [Origem], Caminho).
 
-calculaTrajetoPorIntermedias(Destino, Destino, Intermedias, Visitadas, Caminho/Sucesso) :- length(Intermedias,0) -> Sucesso = true, inverso(Visitadas, Caminho); Caminho = [], Sucesso = false.
-calculaTrajetoPorIntermedias(Origem, Destino, Intermedias, Visitadas, Caminho/Sucesso) :- isAdjacente(Origem, Proxima),
-										             	  								  \+ member(Proxima, Visitadas),
-													 	                                  removeEmComum(Proxima,Intermedias,NovasIntermedias),
-										             	                                  calculaTrajetoPorIntermedias(Proxima, Destino, NovasIntermedias, [Proxima|Visitadas], Caminho/Sucesso).
+calculaTrajetoPorIntermedias(Destino, Destino, [], Visitadas, Caminho) :- inverso(Visitadas, Caminho).
+calculaTrajetoPorIntermedias(Origem, Destino, Intermedias, Visitadas, Caminho) :- isAdjacente(Origem, Proxima),
+																				  \+ member(Proxima, Visitadas),
+																				  (member(Proxima,Intermedias) -> removeEmComum(Proxima,Intermedias,NovasIntermedias) ; NovasIntermedias = Intermedias),
+																				  calculaTrajetoPorIntermedias(Proxima, Destino, NovasIntermedias, [Proxima|Visitadas], Caminho).
