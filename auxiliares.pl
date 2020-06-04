@@ -36,3 +36,7 @@ seleciona(E, [X|Xs], [X|Ys]) :- seleciona(E, Xs, Ys).
 removeEmComum( X , [], [] ).
 removeEmComum( X, [X|T], T ).
 removeEmComum( X, [H|T], [H|R] ) :- removeEmComum( X, T, R ).
+
+
+parseOperadoras([],[]).
+parseOperadoras([X|T], R) :- operadora(N,X) -> append([N], L, R), parseOperadoras(T, L).

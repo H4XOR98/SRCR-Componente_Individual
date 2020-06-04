@@ -48,8 +48,7 @@ calculaTrajetoPorOperadora(Origem, Destino, Operadoras, Visitadas, Caminho) :- p
 % Algoritmo de Pesquisa : Pesquisa Não-Informada( Primeiro em Profundidade Com Multi-Estados)
 % - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
-trajetoEntrePontosSemOperadora(Origem, Destino, Operadoras, Caminho) :- calculaTrajetoSemOperadora(Origem, Destino, Operadoras, [Origem], Caminho),
-                                          			  					escrever(Caminho).
+trajetoEntrePontosSemOperadora(Origem, Destino, Operadoras, Caminho) :- calculaTrajetoSemOperadora(Origem, Destino, Operadoras, [Origem], Caminho).
 
 calculaTrajetoSemOperadora(Destino, Destino, Operadoras, Visitadas, Caminho) :- paragem( Destino, _, _, _, _, _, _, OperadoraDestino, _ ),
 																  				\+ member(OperadoraDestino, Operadoras), 
@@ -58,7 +57,7 @@ calculaTrajetoSemOperadora(Origem, Destino, Operadoras, Visitadas, Caminho) :- p
 															     			   \+ member(OperadoraOrigem, Operadoras), 
 																 			   isAdjacente(Origem, Proxima),
 										             			 			   \+ member(Proxima, Visitadas),
-										            			 			   calculaTrajetoSeOperadora(Proxima, Destino, Operadoras, [Proxima|Visitadas], Caminho).
+										            			 			   calculaTrajetoSemOperadora(Proxima, Destino, Operadoras, [Proxima|Visitadas], Caminho).
 
 
 % - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
