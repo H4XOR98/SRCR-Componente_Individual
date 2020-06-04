@@ -65,10 +65,9 @@ calculaTrajetoSemOperadora(Origem, Destino, Operadoras, Visitadas, Caminho) :- p
 % Algoritmo de Pesquisa : Pesquisa Não-Informada( Primeiro em Profundidade Com Multi-Estados)
 % - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
-trajetoParagensMaisComCarreiras(Origem, Destino, Caminho/Carreiras) :- paragem( Origem, _, _, _, _, _, CarreirasOrigem, _, _ ),
+trajetoParagensComMaisCarreiras(Origem, Destino, Caminho/Carreiras) :- paragem( Origem, _, _, _, _, _, CarreirasOrigem, _, _ ),
                                               						   length(CarreirasOrigem, NumCarreirasOrigem),
-											  						   calculaParagensComMaisCarreiras(Origem, Destino, [Origem], [Origem]/NumCarreirasOrigem, Caminho/Carreiras),
-											  						   escrever(Caminho).
+											  						   calculaParagensComMaisCarreiras(Origem, Destino, [Origem], [Origem]/NumCarreirasOrigem, Caminho/Carreiras).
 
 calculaParagensComMaisCarreiras(Destino, Destino, Visitadas, MaxCarreiras, Caminho/Carreiras) :- paragem( Destino, _, _, _, _, _, CarreirasDestino, _, _ ),
                                                           	 			 						 length(CarreirasDestino, NumCarreirasDestino),

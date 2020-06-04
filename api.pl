@@ -41,3 +41,17 @@ trajetoEntrePontosSemOperadora(Origem,Destino, Operadoras) :- parseOperadoras(Op
                                                               write(Operadoras),
                                                               write('\nPercurso: '),
                                                               write(Caminho).
+
+
+trajetoParagensComMaisCarreiras(Origem,Destino) :- trajetoParagensComMaisCarreiras(Origem, Destino, Caminho/Carreiras),
+                                                    write('-----------------------------------------------------------\n'),
+                                                    write('---------------- Trajeto Paragens ----------------\n'),
+                                                    write('---------------------------------------------------------------------\n'),
+                                                    write('\nOrigem: '),
+                                                    write(Origem),
+                                                    write('\nDestino: '),
+                                                    write(Destino),
+                                                    write('\nCarreirad: '),
+                                                    write(Carreiras),
+                                                    write('\nPercurso: '),
+                                                    write(Caminho).
