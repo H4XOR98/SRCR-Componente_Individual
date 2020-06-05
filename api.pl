@@ -57,3 +57,22 @@ trajetoParagensComMaisCarreiras(Origem,Destino) :- trajetoParagensComMaisCarreir
                                                     write(NumParagens),
                                                     write('\nPercurso: '),
                                                     write(Caminho).
+
+
+
+
+
+percursoMaisRapido_Distancia(Origem, Destino) :- percursoMaisRapido_Distancia(Origem, Destino, Caminho/Custo),
+                                                 write('-----------------------------------------------------------------\n'),
+                                                 write('---------------- Trajeto Mais Rapido (Distancia) ----------------\n'),
+                                                 write('-----------------------------------------------------------------\n'),
+                                                 write('\nOrigem: '),
+                                                 write(Origem),
+                                                 write('\nDestino: '),
+                                                 write(Destino),  
+                                                 write('\nPercurso: '),
+                                                 write(Caminho),
+                                                 write('\nDistancia Total: '),
+                                                 write(Custo).
+
+                                                  
