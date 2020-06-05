@@ -76,3 +76,13 @@ percursoMaisRapido_Distancia(Origem, Destino) :- percursoMaisRapido_Distancia(Or
                                                  write(Custo).
 
                                                   
+trajetoEntrePontosComPublicidade(Origem, Destino) :- trajetoEntrePontosComPublicidade(Origem, Destino, Caminho),
+                                                     write('----------------------------------------------------------\n'),
+                                                     write('---------------- Trajeto Com Publicidade  ----------------\n'),
+                                                     write('----------------------------------------------------------\n'),
+                                                     write('\nOrigem: '),
+                                                     write(Origem),
+                                                     write('\nDestino: '),
+                                                     write(Destino),    
+                                                     write('\nPercurso: '),
+                                                     write(Caminho).

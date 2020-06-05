@@ -133,7 +133,7 @@ isAdjacente(Destino,[Origem|Caminho]/Custo/_, [Proxima,Origem|Caminho]/NovoCusto
 % - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
 
-trajetoEntrePontosComPublicidade(Origem, Destino, Caminho) :- calculaTrajetoComPublicidade(Origem, Destino, [Origem], Caminho), escrever(Caminho).
+trajetoEntrePontosComPublicidade(Origem, Destino, Caminho) :- calculaTrajetoComPublicidade(Origem, Destino, [Origem], Caminho).
 
 calculaTrajetoComPublicidade(Destino, Destino, Visitadas, Caminho) :- paragem( Destino, _, _, _, _, 'Yes', _, _, _ ), inverso(Visitadas, Caminho).
 calculaTrajetoComPublicidade(Origem, Destino, Visitadas, Caminho) :- isAdjacente(Origem, Proxima),
