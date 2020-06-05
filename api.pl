@@ -97,3 +97,17 @@ trajetoEntrePontosComAbrigo(Origem, Destino) :- trajetoEntrePontosComAbrigo(Orig
                                                 write(Destino),    
                                                 write('\nPercurso: '),
                                                 write(Caminho).
+
+
+trajetoPorIntermedias(Origem, Destino, Intermedias) :- trajetoPorIntermedias(Origem, Destino, Intermedias, Caminho),
+                                                        write('----------------------------------------------------------\n'),
+                                                        write('------------------- Trajeto Com Abrigo -------------------\n'),
+                                                        write('----------------------------------------------------------\n'),
+                                                        write('\nOrigem: '),
+                                                        write(Origem),
+                                                        write('\nDestino: '),
+                                                        write(Destino),    
+                                                        write('\nParagens Intermedias: '),
+                                                        write(Intermedias), 
+                                                        write('\nPercurso: '),
+                                                        write(Caminho).
