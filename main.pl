@@ -84,12 +84,13 @@ calculaParagensComMaisCarreiras(Origem, Destino, Visitadas, MaxCarreiras, Caminh
 
 % - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 % Escolher o menor percurso (usando critério menor número de paragens).
+% Algoritmo de Pesquisa : Pesquisa Não-Informada( Primeiro em Profundidade Com Multi-Estados)
 % - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
 
-percursoMenosParagens(Origem, Destino, Caminho):- findall( (S,NumParagens), 
+percursoMenosParagens(Origem, Destino, Caminho/NP):- findall( (S,NumParagens), 
                                          						( trajetoEntrePontos(Origem, Destino, S),length(S, NumParagens) ),
-                                         					  Lista ), minimo(Lista, Caminho).
+                                         					  Lista ), minimo(Lista, Caminho/NP).
 
 
 % - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
@@ -135,6 +136,7 @@ isAdjacente(Destino,[Origem|Caminho]/Custo/_, [Proxima,Origem|Caminho]/NovoCusto
 
 % - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 % Escolher o percurso que passe apenas por abrigos com publicidade.
+% Algoritmo de Pesquisa : Pesquisa Não-Informada( Primeiro em Profundidade Com Multi-Estados)
 % - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
 
@@ -149,6 +151,7 @@ calculaTrajetoComPublicidade(Origem, Destino, Visitadas, Caminho) :- isAdjacente
 
 % - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 % Escolher o percurso que passe apenas por paragens abrigadas.
+% Algoritmo de Pesquisa : Pesquisa Não-Informada( Primeiro em Profundidade Com Multi-Estados)
 % - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
 
@@ -165,6 +168,7 @@ calculaTrajetoComAbrigo(Origem, Destino, Visitadas, Caminho) :- isAdjacente(Orig
 
 % - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 % Escolher um ou mais pontos intermédios por onde o percurso deverá passar.
+% Algoritmo de Pesquisa : Pesquisa Não-Informada( Primeiro em Profundidade Com Multi-Estados)
 % - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
 trajetoPorIntermedias(Origem, Destino, Intermedias, Caminho) :- removeEmComum(Origem,Intermedias,NovasIntermedias), 
