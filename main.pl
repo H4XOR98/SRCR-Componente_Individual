@@ -147,11 +147,11 @@ calculaTrajetoComPublicidade(Origem, Destino, Visitadas, Caminho) :- isAdjacente
 % - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
 
-trajetoEntrePontosComAbrigo(Origem, Destino, Caminho) :- calculaTrajetoComAbrigo(Origem, Destino, [Origem], Caminho).
+trajetoEntrePontosComAbrigo(Origem, Destino, Caminho) :- paragem( Destino, _, _, _, Abrigo, _, _, _, _ ), 
+														 \+ member(Abrigo,['Sem Abrigo']),
+													     calculaTrajetoComAbrigo(Origem, Destino, [Origem], Caminho).
 
-calculaTrajetoComAbrigo(Destino, Destino, Visitadas, Caminho) :- paragem( Destino, _, _, _, Abrigo, _, _, _, _ ), 
-																 \+ member(Abrigo,['Sem Abrigo']),
-																 inverso(Visitadas, Caminho).
+calculaTrajetoComAbrigo(Destino, Destino, Visitadas, Caminho) :- inverso(Visitadas, Caminho).
 calculaTrajetoComAbrigo(Origem, Destino, Visitadas, Caminho) :- isAdjacente(Origem, Proxima),
 													   			paragem( Origem, _, _, _, Abrigo, _, _, _, _ ),
 																\+ member(Abrigo,['Sem Abrigo']),
