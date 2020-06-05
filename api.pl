@@ -86,3 +86,14 @@ trajetoEntrePontosComPublicidade(Origem, Destino) :- trajetoEntrePontosComPublic
                                                      write(Destino),    
                                                      write('\nPercurso: '),
                                                      write(Caminho).
+
+trajetoEntrePontosComAbrigo(Origem, Destino) :- trajetoEntrePontosComAbrigo(Origem, Destino, Caminho),
+                                                write('----------------------------------------------------------\n'),
+                                                write('------------------- Trajeto Com Abrigo -------------------\n'),
+                                                write('----------------------------------------------------------\n'),
+                                                write('\nOrigem: '),
+                                                write(Origem),
+                                                write('\nDestino: '),
+                                                write(Destino),    
+                                                write('\nPercurso: '),
+                                                write(Caminho).

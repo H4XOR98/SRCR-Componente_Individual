@@ -147,17 +147,16 @@ calculaTrajetoComPublicidade(Origem, Destino, Visitadas, Caminho) :- isAdjacente
 % - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
 
-trajetoEntrePontosComAbrigo(Origem, Destino, Caminho) :- calculaTrajetoComAbrigo(Origem, Destino, [Origem], Caminho), escrever(Caminho).
+trajetoEntrePontosComAbrigo(Origem, Destino, Caminho) :- calculaTrajetoComAbrigo(Origem, Destino, [Origem], Caminho).
 
 calculaTrajetoComAbrigo(Destino, Destino, Visitadas, Caminho) :- paragem( Destino, _, _, _, Abrigo, _, _, _, _ ), 
-																 member(Abrigo,['Aberto dos Lados','Fechado dos Lados']), 
+																 \+ member(Abrigo,['Sem Abrigo']),
 																 inverso(Visitadas, Caminho).
 calculaTrajetoComAbrigo(Origem, Destino, Visitadas, Caminho) :- isAdjacente(Origem, Proxima),
 													   			paragem( Origem, _, _, _, Abrigo, _, _, _, _ ),
-																member(Abrigo,['Aberto dos Lados','Fechado dos Lados']), 
+																\+ member(Abrigo,['Sem Abrigo']),
 																\+ member(Proxima, Visitadas),
-										               			calculaTrajetoComAbrigo(Proxima, Destino, [Proxima|Visitadas], Caminho).
-
+																calculaTrajetoComAbrigo(Proxima, Destino, [Proxima|Visitadas], Caminho).
 
 % - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 % Escolher um ou mais pontos intermédios por onde o percurso deverá passar.
