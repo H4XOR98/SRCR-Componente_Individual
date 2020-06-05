@@ -43,9 +43,9 @@ parseOperadoras([X|T], R) :- operadora(N,X) -> append([N], L, R), parseOperadora
 
 
 
-minimo([],[]).
-minimo([(Caminho,NumParagens)],Caminho).
-minimo([(Caminho/NumParagens)|Lista],Result) :- comparaMinimos(Caminho/NumParagens,Lista,Result).
+minimo([],[]/0).
+minimo([(Caminho,NumParagens)],Caminho/NumParagens).
+minimo([(Caminho/NumParagens)|Lista],Result/NP) :- comparaMinimos(Caminho/NumParagens,Lista,Result/NP).
 
-comparaMinimos(Caminho1/_, [], Caminho1).	
-comparaMinimos(Caminho1/NumParagens1,[ (Caminho2/NumParagens2) | T],Result) :- NumParagens1 >= NumParagens2 -> comparaMinimos(Caminho1/NumParagens1, T, Result) ; comparaMinimos(Caminho2/NumParagens2,T,Result).
+comparaMinimos(Caminho1/NumParagens1, [], Caminho1/NumParagens1).	
+comparaMinimos(Caminho1/NumParagens1,[ (Caminho2/NumParagens2) | T],Result/NP) :- NumParagens1 >= NumParagens2 -> comparaMinimos(Caminho2/NumParagens2, T, Result/NP) ; comparaMinimos(Caminho1/NumParagens1,T,Result/NP).

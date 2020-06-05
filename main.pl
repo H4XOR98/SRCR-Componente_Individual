@@ -87,8 +87,8 @@ calculaParagensComMaisCarreiras(Origem, Destino, Visitadas, MaxCarreiras, Caminh
 % - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
 
-percursoMenosParagens(Origem, Destino, Caminho):- findall((S/NumParagens),(trajetoEntrePontos(Origem, Destino, S),length(S,NumParagens)),Lista),
-                      minimo(Lista,Caminho). 
+percursoMenosParagens(Origem, Destino, Caminho/NumParagens):- findall((S/NumParagens),(trajetoEntrePontos(Origem, Destino, S),length(S,NumParagens)),Lista),
+                      minimo(Lista,Caminho/NumParagens). 
 
 
 % - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
