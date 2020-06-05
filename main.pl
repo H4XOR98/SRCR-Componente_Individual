@@ -87,6 +87,10 @@ calculaParagensComMaisCarreiras(Origem, Destino, Visitadas, MaxCarreiras, Caminh
 % - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
 
+percursoMenosParagens(Origem, Destino, Caminho):- findall((S/NumParagens),(trajetoEntrePontos(Origem, Destino, S),length(S,NumParagens)),Lista),
+                      minimo(Lista,Caminho). 
+
+
 % - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 % Escolher o percurso mais rápido (usando critério da distância).
 % Algoritmo de Pesquisa : Pesquisa Informada( Algoritmo A* )

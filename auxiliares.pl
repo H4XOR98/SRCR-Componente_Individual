@@ -40,3 +40,12 @@ removeEmComum( X, [H|T], [H|R] ) :- removeEmComum( X, T, R ).
 
 parseOperadoras([],[]).
 parseOperadoras([X|T], R) :- operadora(N,X) -> append([N], L, R), parseOperadoras(T, L).
+
+
+
+minimo([],[]).
+minimo([(Caminho,NumParagens)],Caminho).
+minimo([(Caminho/NumParagens)|Lista],Result) :- comparaMinimos(Caminho/NumParagens,Lista,Result).
+
+comparaMinimos(Caminho1/_, [], Caminho1).	
+comparaMinimos(Caminho1/NumParagens1,[ (Caminho2/NumParagens2) | T],Result) :- NumParagens1 >= NumParagens2 -> comparaMinimos(Caminho1/NumParagens1, T, Result) ; comparaMinimos(Caminho2/NumParagens2,T,Result).
